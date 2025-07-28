@@ -1,0 +1,25 @@
+{
+    "name": "fernando/app_radios",
+    "description": "Aplicação para gestão de transceptores.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "app\\Controllers\\": [
+                "app/controllers"
+            ],
+            "app\\System\\":["app/system"],
+            "app\\Models\\":["app/models"]
+        },
+        "files": [
+            "app/config.php",
+            "app/helpers/functions.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Luis-Martinelli",
+            "email": "lfnm1989@gmail.com"
+        }
+    ],
+    "require": {}
+}
