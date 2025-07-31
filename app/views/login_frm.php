@@ -30,7 +30,7 @@
         <?php if(!empty($validation_errors)): ?>
                                 <div class="alert alert-danger p-2 text-center">
                                     <?php foreach($validation_errors as $error): ?>
-                                        <?= $error ?>
+                                        <div><script><?= $error ?></script></div>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>

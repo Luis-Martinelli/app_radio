@@ -55,9 +55,11 @@ class Main extends BaseController {
     //form validation
     $validation_errors = [];
     if (empty($_POST['username']) || empty($_POST['password'])) {
-      $_SESSION['login_error_empty'] = true;
-      $this->login_frm();
-      return;
+      $validation_errors []=  "Swal.fire({
+                                  title: 'Campos Obrigatórios',
+                                  text: 'Preencha Usuário e Senha!',
+                                  icon: 'warning'
+                              });";
     }
 
 
