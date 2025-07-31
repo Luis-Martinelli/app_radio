@@ -54,9 +54,12 @@ class Main extends BaseController {
 
     //form validation
     $validation_errors = [];
-    if(empty($_POST['cpf']) || empt($_POST['password'])){
-        $validation_errors[] = "CPF e Senha são obrigatórios!";
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+      $_SESSION['login_error_empty'] = true;
+      $this->login_frm();
+      return;
     }
+
 
     //check if there are validation errors
     if(!empty($validation_errors)){
@@ -66,7 +69,7 @@ class Main extends BaseController {
     }
 
     //get form data
-    $cpf = $_POST['cpf'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
 

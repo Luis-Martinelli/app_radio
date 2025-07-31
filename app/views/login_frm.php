@@ -1,19 +1,22 @@
 <div>
     <section class="login-bg">
+      <div class="nav"><img src="../src/img/logo_SGM-2.png" width="400px"> 
+      </div>
     <div class="popup">
+     
     <div class="bar"></div>
     <div class="forms">
       <div class="login-logo">
-        <img src="./img/icons/login-12.svg" alt="">
+        <h1 class="font-1-xl">Login</h1>
       </div>
       <div class="form-element">
         <form action="?ct=main&mt=login_submit" method="post">
-        <label for="cpf">CPF</label>
-        <input type="text" name="cpf" id="cpf" oninput="mascara(this)" maxlength="11">
+        <label for="username">Usuário</label>
+        <input type="text" name="username" id="username" >
         </div>
        <div class="form-element">
         <label for="password">Senha</label>
-        <input type="password" id="senha">
+        <input type="password" id="password" name="password">
        </div>
        <div class="form-element">
         <input type="checkbox" id="remember-me">
@@ -23,11 +26,11 @@
         <button type="submit">Acessar</button>
        </div>
       <div class="form-element">
-        <a href="">Esqueci a Senha!</a>
+        <a href="">Esqueci a Senha</a>
         <?php if(!empty($validation_errors)): ?>
                                 <div class="alert alert-danger p-2 text-center">
                                     <?php foreach($validation_errors as $error): ?>
-                                        <div><?= $error ?></div>
+                                        <?= $error ?>
                                     <?php endforeach; ?>
                                 </div>
                             <?php endif; ?>
@@ -42,8 +45,13 @@
      </div>
     </div>
     <div class="stamp">
-      <img src="./img/logo200anosbranca.png" alt="">
-      <img src="./img/12I-branco.png" alt="">
-    </div>
+  </div>
+  <?php if (!empty($_SESSION['login_error_empty'])): ?>
+  <script>
+    emptyLogin();
+  </script>
+  <?php unset($_SESSION['login_error_empty']); ?>
+<?php endif; ?>
+
 </section>
 

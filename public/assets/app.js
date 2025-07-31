@@ -180,9 +180,9 @@ function mascara(i) {
 
 function emptyLogin(){
 Swal.fire({
-        icon: 'warning',
-        title: 'Atenção!',
-        text: 'CPF são obrigatórios!.'
+        icon: "warning",
+        title: "Atenção!",
+        text: "CPF são obrigatórios!"
       });
-}
+};
 
